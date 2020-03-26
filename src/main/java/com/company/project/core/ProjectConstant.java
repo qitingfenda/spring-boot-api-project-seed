@@ -10,7 +10,7 @@ public final class ProjectConstant {
     /**
      * //生成代码所在的基础包名称，可根据自己公司的项目修改（注意：这个配置修改之后需要手工修改src目录项目默认的包路径，使其保持一致，不然会找不到类）
      */
-    public static final String BASE_PACKAGE = "com.company.project";
+    public static final String BASE_PACKAGE = "com.company.project.test";
     /**
      * 生成的Model所在包
      */
@@ -30,9 +30,9 @@ public final class ProjectConstant {
     /**
      * 生成的Controller所在包
      */
-    public static final String CONTROLLER_PACKAGE = BASE_PACKAGE + ".web";
+    public static final String CONTROLLER_PACKAGE = BASE_PACKAGE + ".controller";
     /**
      * Mapper插件基础接口的完全限定名
      */
-    public static final String MAPPER_INTERFACE_REFERENCE = BASE_PACKAGE + ".core.Mapper";
+    public static final String MAPPER_INTERFACE_REFERENCE = BASE_PACKAGE + ".mapper";
 }
