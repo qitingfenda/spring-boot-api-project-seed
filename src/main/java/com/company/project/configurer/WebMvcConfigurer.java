@@ -78,7 +78,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     public void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
         exceptionResolvers.add((request, response, handler, e) -> {
             Result result = new Result();
-            if (e instanceof ServiceException) {//业务失败的异常，如“账号或密码错误”
+            if (e instanceof ServiceException) {//业务失败的异常
                 result.setCode(ResultCode.FAIL).setMessage(e.getMessage());
                 logger.info(e.getMessage());
             } else if (e instanceof NoHandlerFoundException) {
@@ -132,7 +132,6 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                     } else {
                         logger.warn("签名认证失败，请求接口：{}，请求IP：{}，请求参数：{}",
                                 request.getRequestURI(), getIpAddress(request), JSON.toJSONString(request.getParameterMap()));
-
                         Result result = new Result();
                         result.setCode(ResultCode.UNAUTHORIZED).setMessage("签名认证失败");
                         responseResult(response, result);
