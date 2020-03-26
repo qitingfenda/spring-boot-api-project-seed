@@ -2,6 +2,9 @@ package com.company.project.core;
 
 /**
  * 响应结果生成工具
+ *
+ * @author yhc
+ * @date 2020/3/26 10:26
  */
 public class ResultGenerator {
     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
@@ -12,7 +15,7 @@ public class ResultGenerator {
                 .setMessage(DEFAULT_SUCCESS_MESSAGE);
     }
 
-    public static <T> Result<T> genSuccessResult(T data) {
+    public static <T> Result genSuccessResult(T data) {
         return new Result()
                 .setCode(ResultCode.SUCCESS)
                 .setMessage(DEFAULT_SUCCESS_MESSAGE)
